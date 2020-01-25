@@ -17,9 +17,16 @@ public class ParsingTest {
 
         MyLanguageParser.ExpressionContext expr = parser.expression();
 
+        // We want the following rule to be applied:
+        // expression LESS_THAN cd_types_nonempty GREATER_THAN LPAREN_NO_WS cd_expressions RPAREN
+        // But instead, the following rule is applied:
+        // expression GREATER_THAN expression
+        // This seems to be contrary to ANTLR's professed behavior of preferring the earlier rule.
+
         System.out.println("expression: " + expr.getText());
         System.out.println("LESS_THAN: " + expr.LESS_THAN());
         System.out.println("GREATER_THAN: " + expr.GREATER_THAN());
+        // TODO: Fix this
         System.out.println("lparen: " + expr.lparen());
         System.out.println("RPAREN: " + expr.RPAREN());
         assertNotNull(expr.LESS_THAN());
