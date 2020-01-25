@@ -27,11 +27,11 @@ public class ParsingTest {
         System.out.println("LESS_THAN: " + expr.LESS_THAN());
         System.out.println("GREATER_THAN: " + expr.GREATER_THAN());
         // TODO: Fix this
-        System.out.println("lparen: " + expr.lparen());
+        System.out.println("lparen: " + expr.LPAREN());
         System.out.println("RPAREN: " + expr.RPAREN());
         assertNotNull(expr.LESS_THAN());
         assertNotNull(expr.GREATER_THAN());
-        assertNotNull(expr.lparen());
+        assertNotNull(expr.LPAREN());
         assertNotNull(expr.RPAREN());
     }
 }
